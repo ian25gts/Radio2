@@ -17,7 +17,15 @@ class RadioTest {
     }
 
     @Test
-    public void maxNumberTest() {
+    public void numberRadioStationsTestBox1() {
+        box1.setNumberRadioStations(10);
+        int expected = 10;
+        int actual = box1.getNumberRadioStations();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void minVolumeTest() {
         box.setMinVolume(-1);
         int expected = 0;
         int actual = box.getMinVolume();
