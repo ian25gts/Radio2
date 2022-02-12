@@ -6,37 +6,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
     Radio box = new Radio();
-    Radio box1 = new Radio(10);
+    Radio box1 = new Radio(20);
+
+    @Test
+    public void teacherTest() {
+        box1.setCurrentRadioStationNumber(15);
+        int expected = 15;
+        int actual = box1.getCurrentRadioStationNumber();
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void numberRadioStationsTest() {
         box.setNumberRadioStations(8);
         int expected = 8;
         int actual = box.getNumberRadioStations();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void numberRadioStationsTestBox1() {
-        box1.setNumberRadioStations(10);
-        int expected = 10;
-        int actual = box1.getNumberRadioStations();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void minVolumeTest() {
-        box.setMinVolume(-1);
-        int expected = 0;
-        int actual = box.getMinVolume();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void minNumberTest() {
-        box.setMinNumber(-1);
-        int expected = 0;
-        int actual = box.getMinNumber();
         assertEquals(expected, actual);
     }
 
