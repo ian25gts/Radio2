@@ -4,13 +4,13 @@ public class Radio {
     private int currentRadioStationNumber;
     private int currentVolume;
     private int numberRadioStations = 10;
-    private int maxNumber;
+    private int maxNumber = numberRadioStations - 1;
 
     public Radio() {
     }
 
     public Radio(int numberRadioStations) {
-        this.numberRadioStations = numberRadioStations;
+        this.numberRadioStations = numberRadioStations - 1;
         this.maxNumber = numberRadioStations - 1;
     }
 
@@ -49,11 +49,11 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0) {
-            return;
+        if (currentVolume <= 0) {
+            currentVolume = 0;
         }
         if (currentVolume > 100) {
-            return;
+            currentVolume = 100;
         }
         this.currentVolume = currentVolume;
     }
